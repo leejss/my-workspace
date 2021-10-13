@@ -1,0 +1,67 @@
+@import '../../styles/common';
+
+// Mixins
+@mixin primary {
+  background: $primary;
+}
+
+@mixin secondary {
+  background: $secondary;
+}
+@mixin error {
+  background: $error;
+}
+
+.Button {
+  // Base style
+  border: none;
+  outline: none;
+  cursor: pointer;
+  border-radius: 5px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: rem(8px) rem(10px);
+}
+
+.Icon {
+  // Button-specific icon
+}
+
+.text {
+}
+
+.outlined {
+}
+
+.contained {
+  &.primary {
+    @include primary();
+  }
+  &.secondary {
+    @include secondary();
+  }
+  &.error {
+    @include error();
+  }
+}
+
+.size-small {
+  font-size: 0.825rem;
+}
+
+.size-medium {
+  min-width: rem(70px);
+  min-height: rem(30px);
+  font-size: 1rem;
+}
+
+.size-large {
+  min-width: rem(90px);
+  min-height: rem(40px);
+  font-size: 1.2rem;
+}
+
+.fullWidth {
+  @include fullWidth();
+}

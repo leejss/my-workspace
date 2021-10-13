@@ -1,0 +1,12 @@
+$base: 16px;
+
+@function rem($value) {
+  $unit: unit($value);
+  @if ($unit == 'px') {
+    @return $value / $base * 1rem;
+  } @else if ($unit == 'rem') {
+    @return $value;
+  } @else {
+    @error 'Value must be in px, em, or rem.';
+  }
+}
